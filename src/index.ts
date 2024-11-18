@@ -60,6 +60,7 @@ export const getNationalHolidays = (year: number) => {
     toDate(new Date(`${year}-10-12 ${setTimeZone}`)),
     toDate(new Date(`${year}-11-02 ${setTimeZone}`)),
     toDate(new Date(`${year}-11-15 ${setTimeZone}`)),
+    toDate(new Date(`${year}-11-20 ${setTimeZone}`)),
     toDate(new Date(`${year}-12-25 ${setTimeZone}`))
   ];
 };

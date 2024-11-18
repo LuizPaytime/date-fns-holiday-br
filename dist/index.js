@@ -54,6 +54,7 @@ const getNationalHolidays = (year) => {
         (0, date_fns_1.toDate)(new Date(`${year}-10-12 ${setTimeZone}`)),
         (0, date_fns_1.toDate)(new Date(`${year}-11-02 ${setTimeZone}`)),
         (0, date_fns_1.toDate)(new Date(`${year}-11-15 ${setTimeZone}`)),
+        (0, date_fns_1.toDate)(new Date(`${year}-11-20 ${setTimeZone}`)),
         (0, date_fns_1.toDate)(new Date(`${year}-12-25 ${setTimeZone}`))
     ];
 };
