@@ -91,11 +91,7 @@ const isHoliday = (date: Date) => {
     return false;
   }
 
-  if (isNationalHoliday(givenDate)) {
-    return true;
-  }
-
-  return false;
+  return isNationalHoliday(givenDate);
 };
 
 export const isWorkingDay = (date: Date) => {
@@ -109,11 +105,8 @@ export const isWorkingDay = (date: Date) => {
     return false;
   }
 
-  if (isHoliday(givenDate)) {
-    return false;
-  }
+  return !isHoliday(givenDate);
 
-  return true;
 };
 
 export const getNextWorkingDay = (date = new Date()) => {
@@ -121,6 +114,21 @@ export const getNextWorkingDay = (date = new Date()) => {
 
   while (!isWorkingDay(nextDate)) {
     nextDate = addDays(nextDate, 1);
+  }
+
+  return nextDate;
+};
+
+// Meme !@.@!
+export const getFirstDayMouth = () => {
+  return 1;
+};
+
+export const getPrevWorkingDay = (date = new Date()) => {
+  let nextDate = subDays(date, 1);
+
+  while (!isWorkingDay(nextDate)) {
+    nextDate = subDays(nextDate, 1);
   }
 
   return nextDate;

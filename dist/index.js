@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getNextWorkingDay = exports.isWorkingDay = exports.isNationalHoliday = exports.getNationalHolidays = void 0;
+exports.getPrevWorkingDay = exports.getFirstDayMouth = exports.getNextWorkingDay = exports.isWorkingDay = exports.isNationalHoliday = exports.getNationalHolidays = void 0;
 const date_fns_1 = require("date-fns");
 const startOfDay = (date) => {
     return new Date(new Date(date).setHours(12, 0, 0, 0));
@@ -79,10 +79,7 @@ const isHoliday = (date) => {
     if (!(0, date_fns_1.isValid)(givenDate)) {
         return false;
     }
-    if ((0, exports.isNationalHoliday)(givenDate)) {
-        return true;
-    }
-    return false;
+    return (0, exports.isNationalHoliday)(givenDate);
 };
 const isWorkingDay = (date) => {
     const givenDate = startOfDay(date);
@@ -92,10 +89,7 @@ const isWorkingDay = (date) => {
     if (isWeekend(givenDate)) {
         return false;
     }
-    if (isHoliday(givenDate)) {
-        return false;
-    }
-    return true;
+    return !isHoliday(givenDate);
 };
 exports.isWorkingDay = isWorkingDay;
 const getNextWorkingDay = (date = new Date()) => {
@@ -106,3 +100,16 @@ const getNextWorkingDay = (date = new Date()) => {
     return nextDate;
 };
 exports.getNextWorkingDay = getNextWorkingDay;
+// Meme !@.@!
+const getFirstDayMouth = () => {
+    return 1;
+};
+exports.getFirstDayMouth = getFirstDayMouth;
+const getPrevWorkingDay = (date = new Date()) => {
+    let nextDate = (0, date_fns_1.subDays)(date, 1);
+    while (!(0, exports.isWorkingDay)(nextDate)) {
+        nextDate = (0, date_fns_1.subDays)(nextDate, 1);
+    }
+    return nextDate;
+};
+exports.getPrevWorkingDay = getPrevWorkingDay;
