@@ -20,12 +20,12 @@ npm i date-fns-holiday-br date-fns
 
 ### Feriados Mapeados
 
-- [x] Conciencia negra
+- [x] Consciência negra
 - [x] Natal
 - [x] Ano novo
-- [x] Corpus Criste
+- [x] Corpus Christi
 - [x] Carnaval
-- [x] Pascoa
+- [x] Páscoa
 - [x] Outros
 
 ## Funções
