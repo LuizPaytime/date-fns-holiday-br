@@ -1,6 +1,6 @@
 {
   "name": "date-fns-holiday-br",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "O objetivo deste projeto é fornecer uma interface para trabalhar com feriados brasileiros usando date-fns",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

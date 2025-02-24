@@ -33,7 +33,7 @@ const _calculateCorpusChristi = (easterDate: Date) => {
 };
 
 const _calculateCarnival = (easterDate: Date) => {
-  return subDays(easterDate, 47);
+  return [subDays(easterDate, 47), subDays(easterDate, 48)];
 };
 
 const _calculateGodsFriday = (easterDate: Date) => {
@@ -51,7 +51,7 @@ export const getNationalHolidays = (year: number) => {
   return [
     easterDate,
     corpusChristiDate,
-    carnivalDate,
+    ...carnivalDate,
     godsFridayDate,
     toDate(new Date(`${year}-01-01 ${setTimeZone}`)),
     toDate(new Date(`${year}-04-21 ${setTimeZone}`)),
